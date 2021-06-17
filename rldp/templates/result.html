@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+
+{% block additional_styles %}
+<style>
+    .center {
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+  
+    }
+</style>
+{% endblock additional_styles %}
+
+
+
+{% block title %}
+Resullt
+{% endblock title %}
+
+
+{% block body %}
+
+<div class="center">
+
+
+{% if pred %}
+<div>
+<h4>The Disease is detected as {{pred}}. </h4>
+</div>
+{% else %}
+<h1>ERROR</h1>
+{% endif %}
+
+
+</div>
+
+{% endblock body %}

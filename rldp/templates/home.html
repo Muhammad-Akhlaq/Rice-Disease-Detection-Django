@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}
+home
+{% endblock title %}
+{% block additional_styles %}
+<style>
+    .center {
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+  
+    }
+</style>
+{% endblock additional_styles %}
+
+
+
+{% block body %}
+
+<div class="center p-4">
+
+{% comment %} <img src="/static/images/cotton1-3.jpg" alt="" width="500" height="600"> {% endcomment %}
+
+<img src="/static/images/cotton1-3.jpg" alt="" width="400" height="200">
+
+    <form action="result/" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div style="margin-bottom: 10px;margin-top: 10px;">
+        <h4>Please Select an Image</h4>
+            <input class="btn btn-primary" type="file" name="picture" id='picture' title="Upload Image" style="cursor: pointer;">
+        </div>
+        <button type="submit" class="btn btn-primary">Prediction</button>
+    </form>
+
+
+</div>
+
+
+{% endblock body %}
